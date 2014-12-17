@@ -1,0 +1,7 @@
+<webscript>
+  <shortname>remove inherits permissions</shortname>
+  <description>remove subfolder inherits permissions</description>
+  <url>/sample01/{folder}</url>
+  <authentication>user</authentication>
+  <transaction>required</transaction>
+</webscript>
