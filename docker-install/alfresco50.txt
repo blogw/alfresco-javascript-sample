@@ -1,0 +1,28 @@
+# alfresco community 5.0a on ubuntu 14.04. Password for admiin: alfresco
+
+$ docker run -it -p 8080:8080 -p 5432:5432 -p 2022:22 bandetech/alfresco-50a /bin/bash
+	cd /opt/alfresco-5.0.a
+	./alfresco.sh start
+
+
+# edit bandetech/alfresco-50a postgres
+/opt/alfresco-5.0.a/alf_data/postgresql
+/opt/alfresco-5.0.a/alf_data/pg_hba.conf
+
+
+# install ssh for bandetech/alfresco-50a
+	apt-get install openssh-server
+	vi /etc/ssh/sshd_config
+		PermitRootLogin yes
+		UsePAM no
+	service ssh start
+
+$ sudo docker ps -a 
+	got container id xxx
+	
+$ sudo docker commit xxx blogw/alfresco-50a
+
+$ sudo docker rm xxx
+
+$ sudo docker run -it -p 8080:8080 -p 5432:5432 -p 2022:22 blogw/alfresco-50a /bin/bash
+	

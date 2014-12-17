@@ -1,0 +1,43 @@
+1.install ubuntu14
+
+2.add static ip
+$ sudo vi /etc/network/interfaces
+	# The primary network interface
+	auto eth0
+	iface eth0 inet static
+	address 192.168.63.100
+	gateway 192.168.63.1
+	netmask 255.255.255.0
+
+$ sudo /etc/init.d/networking restart
+
+3.install docker
+$ sudo apt-get install docker.io
+$ sudo service docker.io status
+$ sudo service docker.io start
+$ sudo ln -sf /usr/bin/docker.io /usr/local/bin/docker
+
+4.set dns
+$ sudo vi /etc/resolv.conf
+	nameserver 192.168.63.1
+	nameserver 219.149.6.99
+
+5.install postgre
+$ sudo apt-get install postgresql postgresql-contrib
+$ sudo ps aux | grep postgres
+
+6.edit config & change pwd
+$ sudo vi /etc/postgresql/9.3/main/postgresql.conf
+	listen="*"
+
+$ sudo vi /etc/postgresql/9.3/main/pg_hba.conf
+	0.0.0.0/0 md5
+
+$ sudo service postgresql restart
+
+$ sudo -i -u postgres
+
+$ psql -U postgres
+	alter user postgres with password 'alfresco';
+ 	\q
+

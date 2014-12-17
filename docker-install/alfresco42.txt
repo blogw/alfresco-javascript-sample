@@ -1,0 +1,19 @@
+https://github.com/DrWolf-OSS/docker-alfresco
+
+git clone https://github.com/DrWolf-OSS/docker-alfresco.git
+
+cd docker-alfresco
+
+edit Dockerfile
+
+edit alfresco-global.properties and configure the database connection & Ldap
+
+sudo docker build -t blogw/alfresco-42f .
+
+sudo docker run -d -p 8080:8080 -p 2022:22 -v /home/blogw/docker-alfresco/templates/alf_data:/opt/alfresco-4.2.f/alf_data blogw/alfresco-42f
+
+# alfresco ntlm
+http://docs.alfresco.com/4.0/tasks/troubleshoot-ntlm.html
+http://docs.alfresco.com/4.2/tasks/auth-alfrescontlm-sso.html
+http://docs.alfresco.com/4.2/tasks/auth-example-twoldap-ad.html
+http://aegif-labo.blogspot.sg/2013/10/ntlm-sso-with-alfresco-42-and-active.html
