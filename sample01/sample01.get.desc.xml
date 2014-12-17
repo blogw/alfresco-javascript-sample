@@ -1,7 +1,8 @@
 <webscript>
-  <shortname>remove inherits permissions</shortname>
-  <description>remove subfolder inherits permissions</description>
-  <url>/sample01/{folder}</url>
+  <shortname>Folder Listing Sample</shortname>
+  <description>Sample demonstrating the listing of folder contents</description>
+  <url>/hello/{folder}</url>
+  <format default="json"/>
   <authentication>user</authentication>
   <transaction>required</transaction>
 </webscript>
