@@ -21,7 +21,7 @@
       <td><input type="text" name="type" size="100"/></td>
     </tr> 
     <tr>
-      <td>buten:</td>
+      <td>${msg("buten")}:</td>
       <td><input type="text" name="buten" size="100"/></td>
     </tr> 
     <tr>
