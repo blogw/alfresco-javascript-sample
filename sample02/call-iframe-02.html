@@ -1,0 +1,36 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+ <head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <title> main window </title>
+
+  <script type="text/javascript">
+  //http://blog.sina.com.cn/s/blog_562fa4b701007yik.html
+  // main js function
+  function fMain(){
+	alert('main function execute success');
+  }
+
+  // exec iframe function
+  function exec_iframe(){
+	if(typeof(exec_obj)=='undefined'){
+		exec_obj = document.createElement('iframe');
+		exec_obj.name = 'tmp_frame';
+		exec_obj.src = 'http://192.168.63.144:8080/alfresco-rest-doc/resources/execB.html?aaa='+ document.getElementById("aaa").value;
+		exec_obj.style.display = 'none';
+		document.body.appendChild(exec_obj);
+	}else{
+		exec_obj.src = 'http://192.168.63.144:8080/alfresco-rest-doc/resources/execB.html?aaa=' + document.getElementById("aaa").value+"&r="+Math.random();
+	}
+  }
+  </script>
+
+ </head>
+
+ <body>
+  <p>A.html main</p>
+  <input type=text size=20 id="aaa" value="this is a test">
+  <p><input type="button" value="exec iframe function" onclick="exec_iframe()"></p>
+  <iframe src="http://192.168.63.144:8080/alfresco-rest-doc/resources/B.html" name="myframe" width="500" height="100"></iframe>
+ </body>
+</html>
