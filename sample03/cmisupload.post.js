@@ -17,6 +17,10 @@ for each (field in formdata.fields) {
 	} else if (field.name == "file" && field.isFile) {
 		filename = field.filename;
 		content = field.content;
+	} else if (field.name == "type") {
+		type = field.value;
+	} else if (field.name == "buten") {
+		buten = field.value;
 	} else if (field.name == "path") {
 		path = field.value;
 	}
@@ -33,7 +37,10 @@ if (filename == undefined || content == undefined) {
 	if (folder != undefined && folder.baseType.id == "cmis:folder") {
 		var properties = cmis.createMap()
 		properties["cmis:name"] = String(name);
-		properties["cmis:objectTypeId"] = "cmis:document";
+		properties["cmis:objectTypeId"] = "D:ics:image";
+		properties["ics:buten"] = String(buten);
+		properties["ics:kouza"] = "111-222-333";
+		properties["ics:type"] = String(type);
 
 		var contentStream = cmis.createContentStream(filename, content);
 

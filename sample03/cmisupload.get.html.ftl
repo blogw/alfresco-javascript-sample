@@ -1,6 +1,7 @@
 <html>
 <head> 
   <title>CMIS Upload Web Script Sample</title> 
+  <meta http-equiv="content-type" content="text/html;charset=utf-8">
   <link rel="stylesheet" href="${url.context}/css/base.css" TYPE="text/css">
 </head>
 <body>
@@ -14,6 +15,14 @@
     <tr>
       <td>Name:</td>
       <td><input type="text" name="name" size="100"/></td>
+    </tr> 
+    <tr>
+      <td>type:</td>
+      <td><input type="text" name="type" size="100"/></td>
+    </tr> 
+    <tr>
+      <td>buten:</td>
+      <td><input type="text" name="buten" size="100"/></td>
     </tr> 
     <tr>
       <td>Path:</td>

@@ -1,6 +1,7 @@
 <html>
 <head>
   <title>Upload Web Script Sample</title>
+  <meta http-equiv="content-type" content="text/html;charset=utf-8">
   <link rel="stylesheet" href="${url.context}/css/base.css" TYPE="text/css">
 </head>
 <body>
